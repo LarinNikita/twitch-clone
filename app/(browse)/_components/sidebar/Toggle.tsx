@@ -7,6 +7,7 @@ import { useSidebar } from '@/store/use-sidebar';
 
 import { Button } from '@/components/ui/button';
 import { Hint } from '@/components/Hint';
+import { Skeleton } from '@/components/ui/skeleton';
 
 export const Toggle = () => {
     const { collapsed, onCollapse, onExpand } = useSidebar(state => state);
@@ -43,5 +44,14 @@ export const Toggle = () => {
                 </div>
             )}
         </>
+    );
+};
+
+export const ToggleSkeleton = () => {
+    return (
+        <div className="mb-2 hidden w-full items-center justify-between p-3 pl-6 lg:flex">
+            <Skeleton className="h-6 w-[100px]" />
+            <Skeleton className="h-6 w-6" />
+        </div>
     );
 };
