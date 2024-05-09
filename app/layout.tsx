@@ -8,6 +8,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 import { ThemeProvider } from '@/components/theme-provider';
+import { Toaster } from '@/components/ui/sonner';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -32,6 +33,7 @@ export default function RootLayout({
                         storageKey="GameHub-theme"
                     >
                         {children}
+                        <Toaster />
                     </ThemeProvider>
                 </body>
             </html>
