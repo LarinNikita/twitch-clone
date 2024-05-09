@@ -1,8 +1,6 @@
 import React from 'react';
 
-type Props = {};
-
-const CreatorPage = (props: Props) => {
+const CreatorPage = () => {
     return <div>CreatorPage</div>;
 };
 
