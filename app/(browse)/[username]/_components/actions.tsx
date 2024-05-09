@@ -4,9 +4,9 @@ import { useTransition } from 'react';
 import { toast } from 'sonner';
 
 import { onFollow, onUnfollow } from '@/actions/follow.action';
+import { onBlock, onUnblock } from '@/actions/block.action';
 
 import { Button } from '@/components/ui/button';
-import { onBlock, onUnblock } from '@/actions/block.action';
 
 interface ActionsProps {
     userId: string;
