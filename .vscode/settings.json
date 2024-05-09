@@ -5,5 +5,5 @@
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "cSpell.words": ["lucide", "nextjs", "sonner"]
+    "cSpell.words": ["lucide", "nextjs", "sonner", "unfollowed", "unfollow"]
 }
