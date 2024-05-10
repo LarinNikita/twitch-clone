@@ -1,4 +1,4 @@
-import React from 'react';
+'use client';
 
 import { Input } from '@/components/ui/input';
 import { CopyButton } from './copy-button';
