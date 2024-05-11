@@ -23,6 +23,7 @@ export const ChatMessage = ({ data }: ChatMessageProps) => {
                     <span className="truncate" style={{ color: color }}>
                         {data.from?.name}
                     </span>
+                    :
                 </p>
                 <p className="break-all text-sm">{data.message}</p>
             </div>
