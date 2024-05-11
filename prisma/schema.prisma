@@ -33,9 +33,9 @@ model User {
 }
 
 model Stream {
-  id          String  @id @default(uuid())
-  name        String  @db.Text
-  thumbnaiUrl String? @db.Text
+  id           String  @id @default(uuid())
+  name         String  @db.Text
+  thumbnailUrl String? @db.Text
 
   ingressId String? @unique
   serverUrl String? @db.Text
