@@ -3,6 +3,7 @@ import { headers } from 'next/headers';
 import { WebhookEvent } from '@clerk/nextjs/server';
 
 import { db } from '@/lib/db';
+import { resetIngress } from '@/actions/ingress.action';
 
 export async function POST(req: Request) {
     // You can find this in the Clerk Dashboard -> Webhooks -> choose the endpoint
@@ -98,6 +99,7 @@ export async function POST(req: Request) {
     }
 
     if (eventType === 'user.deleted') {
+        await resetIngress(payload.data.id);
         await db.user.delete({
             where: {
                 externalUserId: payload.data.id,
