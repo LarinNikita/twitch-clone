@@ -71,7 +71,8 @@ export const ChatForm = ({
                     placeholder="Send a message"
                     className={cn(
                         'border-white/10 focus-visible:ring-0 focus-visible:ring-offset-0',
-                        isFollowersOnly && 'rounded-t-none border-t-0',
+                        (isFollowersOnly || isDelayed) &&
+                            'rounded-t-none border-t-0',
                     )}
                 />
             </div>
