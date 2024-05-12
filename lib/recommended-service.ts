@@ -2,7 +2,6 @@ import { db } from '@/lib/db';
 import { getSelf } from './auth-service';
 
 export const getRecommended = async () => {
-    // await new Promise(resolve => setTimeout(resolve, 5000)); //for testing sidebar skeleton
     let userId;
 
     try {
@@ -50,9 +49,16 @@ export const getRecommended = async () => {
                     },
                 },
             },
-            orderBy: {
-                createdAt: 'desc',
-            },
+            orderBy: [
+                {
+                    stream: {
+                        isLive: 'desc',
+                    },
+                },
+                {
+                    createdAt: 'desc',
+                },
+            ],
         });
     } else {
         users = await db.user.findMany({
@@ -63,9 +69,16 @@ export const getRecommended = async () => {
                     },
                 },
             },
-            orderBy: {
-                createdAt: 'desc',
-            },
+            orderBy: [
+                {
+                    stream: {
+                        isLive: 'desc',
+                    },
+                },
+                {
+                    createdAt: 'desc',
+                },
+            ],
         });
     }
 
