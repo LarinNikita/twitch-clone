@@ -1,8 +1,10 @@
 import React from 'react';
 import { Clapperboard } from 'lucide-react';
 import Link from 'next/link';
-import { currentUser } from '@clerk/nextjs/server';
-import { SignInButton, UserButton } from '@clerk/nextjs';
+import { SignInButton } from '@/components/auth/signin-button';
+
+import { currentUser } from '@/lib/auth';
+import { UserButton } from '@/components/auth/user-button';
 
 import { Button } from '@/components/ui/button';
 

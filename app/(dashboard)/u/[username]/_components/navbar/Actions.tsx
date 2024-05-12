@@ -1,7 +1,7 @@
 import React from 'react';
 import { LogOut } from 'lucide-react';
 import Link from 'next/link';
-import { UserButton } from '@clerk/nextjs';
+import { UserButton } from '@/components/auth/user-button';
 
 import { Button } from '@/components/ui/button';
 

@@ -2,7 +2,7 @@
 
 import { useTransition } from 'react';
 import { Heart } from 'lucide-react';
-import { useAuth } from '@clerk/nextjs';
+import { useAuth } from '@/lib/auth';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
 

@@ -3,7 +3,7 @@
 import React from 'react';
 import { Fullscreen, KeyRound, MessageSquare, Users } from 'lucide-react';
 import { usePathname } from 'next/navigation';
-import { useUser } from '@clerk/nextjs';
+import { useUser } from '@/lib/auth';
 
 import { NavItem, NavItemSkeleton } from './nav-item';
 

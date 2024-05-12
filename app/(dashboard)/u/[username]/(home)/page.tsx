@@ -1,4 +1,4 @@
-import { currentUser } from '@clerk/nextjs/server';
+import { currentUser } from '@/lib/auth';
 
 import { getUserByUsername } from '@/lib/user-service';
 
