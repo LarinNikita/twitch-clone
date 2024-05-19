@@ -1,5 +1,8 @@
 import React from 'react';
 import { Inter } from 'next/font/google';
+import { SessionProvider } from 'next-auth/react';
+
+import { auth } from '@/next-auth';
 
 import type { Metadata } from 'next';
 
@@ -16,22 +19,25 @@ export const metadata: Metadata = {
     icons: '/logo.svg',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    const session = await auth();
     return (
         <html lang="en">
             <body className={inter.className}>
-                <ThemeProvider
-                    attribute="class"
-                    forcedTheme="dark"
-                    storageKey="GameHub-theme"
-                >
-                    {children}
-                    <Toaster />
-                </ThemeProvider>
+                <SessionProvider session={session}>
+                    <ThemeProvider
+                        attribute="class"
+                        forcedTheme="dark"
+                        storageKey="GameHub-theme"
+                    >
+                        {children}
+                        <Toaster />
+                    </ThemeProvider>
+                </SessionProvider>
             </body>
         </html>
     );

@@ -9,7 +9,7 @@ import { NavItem, NavItemSkeleton } from './nav-item';
 
 export const Navigation = () => {
     const pathname = usePathname();
-    const { user } = useUser();
+    const user = useUser();
 
     const routes = [
         {
