@@ -1,7 +1,11 @@
-import React from 'react';
-// import { SignInButton as ClerkSignInButton } from '@clerk/nextjs';
+import Link from 'next/link';
 
-export const SignInButton = ({ children }: { children: React.ReactNode }) => {
-    // return <ClerkSignInButton>{children}</ClerkSignInButton>;
-    return <div>{children}</div>;
+import { Button } from '@/components/ui/button';
+
+export const SignInButton = () => {
+    return (
+        <Button variant="primary" size="sm">
+            <Link href="/sign-in">Login</Link>
+        </Button>
+    );
 };
