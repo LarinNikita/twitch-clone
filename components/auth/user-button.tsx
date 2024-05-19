@@ -12,6 +12,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { UserAvatar } from '@/components/user-avatar';
 import { Button } from '@/components/ui/button';
+import { SettingsModal } from './settings-modal';
 
 export const UserButton = async () => {
     const user = await getSelf();
@@ -25,6 +26,10 @@ export const UserButton = async () => {
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-60">
                 <DropdownMenuLabel>{user.username}</DropdownMenuLabel>
+                <SettingsModal
+                    initialUsername={user.username}
+                    initialImage={user.image}
+                />
                 <DropdownMenuSeparator />
                 <form
                     action={async () => {

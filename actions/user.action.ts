@@ -10,7 +10,14 @@ export const updateUser = async (values: Partial<User>) => {
     try {
         const self = await getSelf();
 
-        const validData = { bio: values.bio };
+        const validData = {
+            username: values.username,
+            bio: values.bio,
+        };
+
+        if (validData.username === '' || validData.username === null) {
+            throw new Error('User name is required');
+        }
 
         const user = await db.user.update({
             where: { id: self.id },
